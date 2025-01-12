@@ -1,0 +1,42 @@
+#include <iostream>
+#include <ctime>
+#include <cstdlib>
+
+using namespace std;
+
+int game(int num);
+
+int main()
+{
+    game(5);
+}
+
+int game(int maxnum){
+    int luku1;
+    int luku2;
+    int arvaukset=0;
+    srand(maxnum);
+    luku1=(rand()%20)+1;
+    cout<<"Arvaa luku: ";
+    cin>>luku2;
+    while(true){
+
+        if(luku1==luku2){
+            arvaukset++;
+            cout<<"Okein!"<<endl;
+            break;
+        }
+        else if(luku1>luku2){
+            arvaukset++;
+            cout<<"Suurempi"<<endl;
+            cin>>luku2;
+        }
+        else{
+            arvaukset++;
+            cout<<"Pienempi"<<endl;
+            cin>>luku2;
+        }
+    }
+    cout<<"Arvaukset: "<<arvaukset<<endl;
+    return arvaukset;
+}
